@@ -1,0 +1,14 @@
+<div class="form-container">
+  <dx-form #frmLogin [(formData)]="authenticateRequestFormData" labelMode="floating" [showColonAfterLabel]="false" labelLocation="left" width="300">
+
+    <dxi-item dataField="username" [label]="{text: 'Usuario'}">
+      <dxi-validation-rule type="required"></dxi-validation-rule>
+    </dxi-item>
+
+    <dxi-item dataField="password" [label]="{text: 'Contraseña'}" [editorOptions]="{mode:'password'}">
+      <dxi-validation-rule type="required"></dxi-validation-rule>
+    </dxi-item>
+
+    <dxi-item itemType="button" [buttonOptions]="{text: 'Iniciar Sesión', icon:'key', type: 'default', width:'100%', onClick: authenticate_onClick}"></dxi-item>
+  </dx-form>
+</div>

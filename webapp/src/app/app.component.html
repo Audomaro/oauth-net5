@@ -1,0 +1,14 @@
+<!-- <ng-container > -->
+<dx-toolbar [items]="toolbarContent" [visible]="isAuthenticated"></dx-toolbar>
+<dx-drawer openedStateMode="overlap" position="left" revealMode="expand" template="template" [(opened)]="isDrawerOpen" [closeOnOutsideClick]="true">
+  <div *dxTemplate="let data of 'template'">
+    <dx-list class="panel-list dx-theme-accent-as-background-color" [dataSource]="navigation" [hoverStateEnabled]="true" [activeStateEnabled]="false" [focusStateEnabled]="false" width="250" (onItemClick)="menu_onItemClick($event)" [visible]="isAuthenticated"></dx-list>
+  </div>
+  <div id="content" [ngClass]="{'login': !isAuthenticated}">
+    <router-outlet></router-outlet>
+  </div>
+</dx-drawer>
+
+<notifier-container></notifier-container>
+
+<ngx-spinner type="ball-scale-multiple" size="large"></ngx-spinner>
